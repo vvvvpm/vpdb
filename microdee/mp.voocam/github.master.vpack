@@ -1,0 +1,24 @@
+<vpack>
+	<meta>
+		<name>mp.voocam</name>
+		<source>https://github.com/microdee/mp.voocam.git</source>
+		<author>microdee</author>
+		<dependencies>
+			<dependency>
+				<name>mp.essentials</name>
+				<source>https://github.com/microdee/mp.essentials.git</source>
+			</dependency>
+			<dependency>
+        		<name>VObjects</name>
+        		<source>https://github.com/microdee/VObjects.git</source>
+			</dependency>
+		</dependencies>
+	</meta>
+	<install>
+		CopyDir(
+			Pack.TempDir,
+			VVVV.Dir + "\\packs\\" + Pack.Name,
+			ignore: new string[] {"src", ".git*"}
+		);
+	</install>
+</vpack>

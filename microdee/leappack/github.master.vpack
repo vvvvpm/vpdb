@@ -1,0 +1,20 @@
+<vpack>
+	<meta>
+		<name>leappack</name>
+		<source>https://github.com/microdee/leappack.git</source>
+		<author>microdee</author>
+		<dependencies>
+			<dependency>
+				<name>mp.dx</name>
+				<source>https://github.com/microdee/mp.dx.git</source>
+			</dependency>
+		</dependencies>
+	</meta>
+	<install>
+		CopyDir(
+			Pack.TempDir,
+			VVVV.Dir + "\\packs\\" + Pack.Name,
+			ignore: new string[] {"src", ".git*"}
+		);
+	</install>
+</vpack>

@@ -1,0 +1,27 @@
+<vpack>
+	<meta>
+		<name>md.ecosystem.mp</name>
+		<source></source>
+		<author>microdee</author>
+		<dependencies>
+			<dependency>
+				<name>mp.dx</name>
+				<source>https://github.com/microdee/mp.dx.git</source>
+			</dependency>
+			<dependency>
+				<name>mp.vaudio</name>
+				<source>https://github.com/microdee/mp.vaudio.git</source>
+			</dependency>
+			<dependency>
+				<name>mp.voocam</name>
+				<source>https://github.com/microdee/mp.voocam.git</source>
+			</dependency>
+			<dependency>
+				<name>leappack</name>
+				<source>https://github.com/microdee/leappack.git</source>
+			</dependency>
+		</dependencies>
+	</meta>
+	<install>
+	</install>
+</vpack>

@@ -1,0 +1,26 @@
+<vpack>
+	<meta>
+		<name>mp.essentials</name>
+		<source>https://github.com/microdee/mp.essentials.git</source>
+		<author>microdee</author>
+		<dependencies>
+			<dependency>
+				<name>vvvv-Message</name>
+				<source>https://raw.githubusercontent.com/microdee/vpm/master/vpdb/velcrome/Message/github.master.csx</source>
+				<aliases>Message, vvvvMessage, vvvv.Message, Messages, vvvv-Messages, vvvvMessages, vvvv.Messages</aliases>
+			</dependency>
+			<dependency>
+				<name>vvvv-Patchbox</name>
+				<source>https://raw.githubusercontent.com/microdee/vpm/master/vpdb/velcrome/Patchbox/contrib.1.21.csx</source>
+				<aliases>Patchbox</aliases>
+			</dependency>
+		</dependencies>
+	</meta>
+	<install>
+		CopyDir(
+			Pack.TempDir,
+			VVVV.Dir + "\\packs\\" + Pack.Name,
+			ignore: new string[] {"src", ".git*"}
+		);
+	</install>
+</vpack>
