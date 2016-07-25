@@ -1,0 +1,26 @@
+<vpack>
+	<meta>
+		<name>CV.Image</name>
+		<source></source>
+		<author>Elliot Woods</author>
+        <aliases>CVImage, CVImagePack, Image, ImagePack, VVVV.Packs.Image, vvvv.packs_.image_b33-x86, vvvv.packs_.image_b32-x86, vvvv.packs_.image_b31-x86, VVVV.Nodes.OpenCV</aliases>
+	</meta>
+	<install>
+        if(VVVV.Architecture == "x64")
+        {
+            Download(
+                "https://vvvv.org/sites/default/files/uploads/CVImagePack_vpm1_x64.7z",
+                VPM.TempDir + "\\CVImagePack.7z"
+                );
+        }
+        else
+        {
+            Download(
+                "https://vvvv.org/sites/default/files/uploads/CVImagePack_vpm1_x86.7z",
+                VPM.TempDir + "\\CVImagePack.7z"
+                );
+        }
+        Extract(VPM.TempDir + "\\CVImagePack.7z", Pack.TempDir);
+        CopyDir(Pack.TempDir + "\\CV.Image", VVVV.Dir + "\\packs\\CV.Image");
+	</install>
+</vpack>

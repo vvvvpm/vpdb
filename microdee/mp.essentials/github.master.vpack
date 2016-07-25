@@ -6,12 +6,12 @@
 		<dependencies>
 			<dependency>
 				<name>vvvv-Message</name>
-				<source>https://raw.githubusercontent.com/microdee/vpm/master/vpdb/velcrome/Message/github.master.csx</source>
+				<source>https://raw.githubusercontent.com/vvvvpm/vpdb/master/velcrome/Message/github.master.csx</source>
 				<aliases>Message, vvvvMessage, vvvv.Message, Messages, vvvv-Messages, vvvvMessages, vvvv.Messages</aliases>
 			</dependency>
 			<dependency>
 				<name>vvvv-Patchbox</name>
-				<source>https://raw.githubusercontent.com/microdee/vpm/master/vpdb/velcrome/Patchbox/contrib.1.21.csx</source>
+				<source>https://raw.githubusercontent.com/vvvvpm/vpdb/master/velcrome/Patchbox/contrib.1.21.csx</source>
 				<aliases>Patchbox</aliases>
 			</dependency>
 		</dependencies>

@@ -14,7 +14,7 @@
 			</dependency>
 			<dependency>
 				<name>dx11-vvvv</name>
-				<source>https://raw.githubusercontent.com/microdee/vpm/master/vpdb/vux/dx11-vvvv/github.master.csx</source>
+				<source>https://raw.githubusercontent.com/vvvvpm/vpdb/master/vux/dx11-vvvv/github.master.csx</source>
 				<aliases>dx11, vvvv-dx11</aliases>
 			</dependency>
 		</dependencies>
