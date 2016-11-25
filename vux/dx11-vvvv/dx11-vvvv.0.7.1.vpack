@@ -1,0 +1,18 @@
+<vpack>
+	<meta>
+		<name>dx11-vvvv</name>
+		<author>vux</author>
+        <aliases>dx11, vvvv-dx11</aliases>
+    </meta>
+    <install>
+      Download(
+        "https://vvvv.org/sites/all/modules/general/pubdlcnt/pubdlcnt.php?file=https://vvvv.org/sites/default/files/uploads/vvvv-packs-dx11-0.7.1-x64.zip",
+        VPM.TempDir + "\\dx11-vvvv.zip"
+      );
+      Extract(VPM.TempDir + "\\dx11-vvvv.zip", Pack.TempDir);
+      CopyDir(
+        Pack.TempDir,
+        VVVV.Dir
+      );
+    </install>
+</vpack>
