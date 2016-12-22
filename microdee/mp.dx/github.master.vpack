@@ -2,6 +2,7 @@
 	<meta>
 		<name>mp.dx</name>
 		<source>https://github.com/microdee/mp.dx.git</source>
+        <license>http://www.imxprs.com/free/microdee/mdmit</license>
 		<author>microdee</author>
 		<dependencies>
 			<dependency>

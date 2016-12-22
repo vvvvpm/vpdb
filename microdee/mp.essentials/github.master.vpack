@@ -2,17 +2,12 @@
 	<meta>
 		<name>mp.essentials</name>
 		<source>https://github.com/microdee/mp.essentials.git</source>
+        <license>http://www.imxprs.com/free/microdee/mdmit</license>
 		<author>microdee</author>
 		<dependencies>
 			<dependency>
 				<name>vvvv-Message</name>
-				<source>https://raw.githubusercontent.com/vvvvpm/vpdb/master/velcrome/Message/github.master.csx</source>
-				<aliases>Message, vvvvMessage, vvvv.Message, Messages, vvvv-Messages, vvvvMessages, vvvv.Messages</aliases>
-			</dependency>
-			<dependency>
-				<name>vvvv-Patchbox</name>
-				<source>https://raw.githubusercontent.com/vvvvpm/vpdb/master/velcrome/Patchbox/contrib.1.21.csx</source>
-				<aliases>Patchbox</aliases>
+				<source>vpms://raw.githubusercontent.com/velcrome/vvvv-Message/master/copy/vvvv-Message.vpack</source>
 			</dependency>
 		</dependencies>
 	</meta>

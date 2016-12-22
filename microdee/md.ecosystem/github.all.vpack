@@ -1,7 +1,7 @@
 <vpack>
 	<meta>
 		<name>md.ecosystem.mp</name>
-		<source></source>
+        <license>http://www.imxprs.com/free/microdee/mdmit</license>
 		<author>microdee</author>
 		<dependencies>
 			<dependency>

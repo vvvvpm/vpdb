@@ -2,6 +2,7 @@
 	<meta>
 		<name>leappack</name>
 		<source>https://github.com/microdee/leappack.git</source>
+        <license>http://www.imxprs.com/free/microdee/mdmit</license>
 		<author>microdee</author>
 		<dependencies>
 			<dependency>

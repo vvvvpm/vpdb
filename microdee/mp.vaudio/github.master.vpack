@@ -2,6 +2,7 @@
 	<meta>
 		<name>mp.vaudio</name>
 		<source>https://github.com/microdee/mp.vaudio.git</source>
+        <license>http://www.imxprs.com/free/microdee/mdmitvaudio</license>
 		<author>microdee</author>
 		<dependencies>
 			<dependency>
