@@ -1,6 +1,7 @@
 <vpack>
 	<meta>
 		<name>VVVV</name>
+        <license>https://vvvv.org/documentation/licensing</license>
 	</meta>
 	<install>
         using System;

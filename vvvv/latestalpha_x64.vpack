@@ -1,6 +1,7 @@
 <vpack>
 	<meta>
 		<name>VVVV</name>
+        <license>https://vvvv.org/documentation/licensing</license>
 	</meta>
 	<install>
         using System;
@@ -55,15 +56,31 @@
             }
         }
 
-        Console.WriteLine("Downloading and extracting VVVV");
-        var locvvvvzip = Path.Combine(Pack.TempDir, vvvvzip);
-        Download(vvvvurl, locvvvvzip);
-        Extract(locvvvvzip, Pack.TempDir);
-        CopyDir(Path.Combine(Pack.TempDir, Path.GetFileNameWithoutExtension(vvvvzip)), VVVV.Dir);
+        try
+        {
+            Console.WriteLine("Downloading and extracting VVVV");
+            var locvvvvzip = Path.Combine(Pack.TempDir, vvvvzip);
+            Download(vvvvurl, locvvvvzip);
+            Extract(locvvvvzip, Pack.TempDir);
+            CopyDir(Path.Combine(Pack.TempDir, Path.GetFileNameWithoutExtension(vvvvzip)), VVVV.Dir);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Something dark and sinister is lurking around VVVV");
+            Console.WriteLine(e.Message);
+        }
 
-        Console.WriteLine("Downloading and extracting the Addonpack");
-        var locaddonszip = Path.Combine(Pack.TempDir, addonszip);
-        Download(addonsurl, locaddonszip);
-        Extract(locaddonszip, VVVV.Dir);
+        try
+        {
+            Console.WriteLine("Downloading and extracting the Addonpack");
+            var locaddonszip = Path.Combine(Pack.TempDir, addonszip);
+            Download(addonsurl, locaddonszip);
+            Extract(locaddonszip, VVVV.Dir);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Something dark and sinister is lurking around addonpack");
+            Console.WriteLine(e.Message);
+        }
 	</install>
 </vpack>
