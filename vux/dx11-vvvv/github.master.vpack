@@ -2,6 +2,7 @@
 	<meta>
 		<name>dx11-vvvv</name>
 		<author>vux</author>
+        <license>https://github.com/mrvux/dx11-vvvv/blob/master/License.md</license>
         <aliases>dx11, vvvv-dx11</aliases>
     </meta>
     <install>
