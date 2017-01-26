@@ -6,13 +6,13 @@
   </meta>
   <install>
     Download(
-      "https://vvvv.org/sites/all/modules/general/pubdlcnt/pubdlcnt.php?file=https://vvvv.org/sites/default/files/uploads/vvvv-time_0.5.5_45beta33.3_x64.zip",
+      "https://vvvv.org/sites/default/files/uploads/vvvv-time_0.5.5_45beta33.3_x64.zip",
       VPM.TempDir + "\\vvvv-Time.zip"
     );
     Extract(VPM.TempDir + "\\vvvv-Time.zip", Pack.TempDir);
 	  CopyDir(
 	    Pack.TempDir,
-	    VVVV.Dir
+	    VVVV.Dir + "\\packs\\vvvv-Time"
 	  );
   </install>
 </vpack>
