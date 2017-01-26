@@ -1,0 +1,17 @@
+<vpack>
+  <meta>
+    <name>vvvv-Message</name>
+    <author>velcrome</author>
+  </meta>
+  <install>
+    Download(
+      "https://github.com/velcrome/vvvv-Message/releases/download/2.9.6/vvvv-Message.zip",
+      VPM.TempDir + "\\vvvv-Message.zip"
+    );
+    Extract(VPM.TempDir + "\\vvvv-Message.zip", Pack.TempDir + "\\extract");
+    CopyDir(
+      Pack.TempDir + "\\extract",
+      VVVV.Dir + "\\packs\\vvvv-Message"
+    );
+  </install>
+</vpack>
