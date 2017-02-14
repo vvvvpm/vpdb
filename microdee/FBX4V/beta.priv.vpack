@@ -1,0 +1,35 @@
+<vpack>
+  <meta>
+    <name>FBX4V Beta</name>
+        <license>https://fbx4v-betadeploy.herokuapp.com</license>
+    <author>microdee</author>
+        <dependencies>
+            <dependency>
+                <name>mp.dx</name>
+                <source>https://github.com/microdee/mp.dx.git</source>
+            </dependency>
+        </dependencies>
+  </meta>
+  <install>
+        using System;
+        Console.WriteLine("");
+        Console.WriteLine("Data: " + Pack.InstallDataFromJS);
+        Console.WriteLine("");
+        if(VVVV.Architecture == "x64")
+        {
+            Download(
+                "https://fbx4v-betadeploy.herokuapp.com/get/" + Pack.InstallDataFromJS + "/payload.zip",
+                VPM.TempDir + "\\payload.zip"
+            );
+            Extract(VPM.TempDir + "\\payload.zip", Pack.TempDir);
+            CopyDir(
+                Pack.TempDir,
+                VVVV.Dir + "\\packs\\" + Pack.Name
+            );
+        }
+        else
+        {
+            Console.WriteLine("FBX4V is only available for x64 vvvv");
+        }
+  </install>
+</vpack>
