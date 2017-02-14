@@ -9,7 +9,7 @@
         </dependency>
         <dependency>
             <name>dx11-vvvv</name>
-            <source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/vux/dx11-vvvv/dx11-vvvv.0.9.62.vpack</source>
+            <source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/vux/dx11-vvvv/dx11-vvvv.latest.vpack</source>
         </dependency>
     </dependencies>
   </meta>
