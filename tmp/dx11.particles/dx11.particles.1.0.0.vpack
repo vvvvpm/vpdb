@@ -3,11 +3,11 @@
     <name>dx11.particles</name>
     <author>tmp</author>
     <license>https://license.intolight.eu/</license>
-    <aliases>dx11, vvvv-dx11</aliases>
+    <aliases>dx11-particles, particles, pointcloud</aliases>
     <dependencies>
       <dependency>
         <name>dx11-vvvv</name>
-        <source>vpms://github.com/vvvvpm/vpdb/blob/master/vux/dx11-vvvv/dx11-vvvv.1.0.1.vpack</source>
+        <source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/vux/dx11-vvvv/dx11-vvvv.1.0.1.vpack</source>
       </dependency>
     </dependencies>
   </meta>
