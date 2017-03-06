@@ -3,7 +3,6 @@
     <name>dx11.particles</name>
     <author>tmp</author>
     <license>https://license.intolight.eu/</license>
-    <aliases>dx11, vvvv-dx11</aliases>
     <dependencies>
       <dependency>
         <name>dx11-vvvv</name>
