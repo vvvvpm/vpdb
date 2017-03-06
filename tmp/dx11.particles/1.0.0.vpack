@@ -1,0 +1,26 @@
+<vpack>
+  <meta>
+    <name>dx11.particles</name>
+    <author>tmp</author>
+    <license>https://license.intolight.eu/</license>
+    <aliases>dx11, vvvv-dx11</aliases>
+    <dependencies>
+      <dependency>
+        <name>dx11-vvvv</name>
+        <source>vpms://github.com/vvvvpm/vpdb/blob/master/vux/dx11-vvvv/dx11-vvvv.1.0.1.vpack</source>
+      </dependency>
+    </dependencies>
+  </meta>
+  <install>
+      Download(
+        "https://vvvv.org/sites/all/modules/general/pubdlcnt/pubdlcnt.php?file=https://vvvv.org/sites/default/files/uploads/dx11-particles-1.0.0-" + VVVV.Architecture + ".zip",
+        VPM.TempDir + "\\dx11.particles.zip"
+      );
+      Extract(VPM.TempDir + "\\dx11.particles.zip", Pack.TempDir);
+      CopyDir(
+        Pack.TempDir,
+        VVVV.Dir
+      );
+  </install>
+</vpack>
+
