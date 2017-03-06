@@ -7,20 +7,35 @@
     <dependencies>
       <dependency>
         <name>dx11-vvvv</name>
+        <aliases>dx11, vvvv-dx11</aliases>
         <source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/vux/dx11-vvvv/dx11-vvvv.1.0.1.vpack</source>
       </dependency>
     </dependencies>
   </meta>
   <install>
+      
       Download(
-        "https://vvvv.org/sites/all/modules/general/pubdlcnt/pubdlcnt.php?file=https://vvvv.org/sites/default/files/uploads/dx11-particles-1.0.0-" + VVVV.Architecture + ".zip",
+        "https://github.com/letmp/dx11-particles/archive/master.zip",
         VPM.TempDir + "\\dx11.particles.zip"
       );
+
       Extract(VPM.TempDir + "\\dx11.particles.zip", Pack.TempDir);
-      CopyDir(
-        Pack.TempDir,
-        VVVV.Dir
-      );
+      
+      if (VVVV.Architecture == "x64"){
+      	CopyDir(
+        	Pack.TempDir + "\\dx11-particles-master\\packs\\dx11.particles",
+        	VVVV.Dir + "\\packs\\dx11.particles",
+        	ignore: new string[] {"x86"}
+      	);	
+      }
+      if (VVVV.Architecture == "x86"){
+      	CopyDir(
+        	Pack.TempDir + "\\dx11-particles-master\\packs\\dx11.particles",
+        	VVVV.Dir + "\\packs\\dx11.particles",
+        	ignore: new string[] {"x64"}
+      	);	
+      }
+
   </install>
 </vpack>
 
