@@ -7,7 +7,7 @@
     </meta>
     <install>
       Download(
-        "https://github.com/mrvux/dx11-vvvv/releases/download/1.0.7-alpha/vvvv-packs-dx11-" + VVVV.Architecture + ".zip",
+        "https://github.com/mrvux/dx11-vvvv/releases/download/1.0.0.34-alpha/vvvv-packs-dx11-" + VVVV.Architecture + ".zip",
         VPM.TempDir + "\\dx11-vvvv.zip"
       );
       Extract(VPM.TempDir + "\\dx11-vvvv.zip", Pack.TempDir);
