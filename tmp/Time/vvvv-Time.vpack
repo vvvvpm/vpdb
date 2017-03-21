@@ -1,0 +1,18 @@
+<vpack>
+  <meta>
+    <name>vvvv-Time</name>
+    <source>https://github.com/intolight/vvvv-Time</source>
+    <author>tmp</author>
+  </meta>
+  <install>
+    Download(
+      "https://github.com/intolight/vvvv-Time/releases/download/0.8.3/vvvv-Time.zip",
+      VPM.TempDir + "\\vvvv-Time.zip"
+    );
+    Extract(VPM.TempDir + "\\vvvv-Time.zip", Pack.TempDir + "\\extract");
+	  CopyDir(
+	    Pack.TempDir + "\\extract",
+	    VVVV.Dir + "\\packs"
+	  );
+  </install>
+</vpack>
