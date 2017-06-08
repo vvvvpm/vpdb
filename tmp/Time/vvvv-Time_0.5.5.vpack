@@ -1,0 +1,18 @@
+<vpack>
+  <meta>
+    <name>vvvv-Time</name>
+    <source>https://github.com/letmp/vvvv-Time</source>
+    <author>tmp</author>
+  </meta>
+  <install>
+    Download(
+      "https://vvvv.org/sites/default/files/uploads/vvvv-time_0.5.5_45beta33.3_" + VVVV.Architecture + ".zip",
+      VPM.TempDir + "\\vvvv-Time.zip"
+    );
+    Extract(VPM.TempDir + "\\vvvv-Time.zip", Pack.TempDir);
+	  CopyDir(
+	    Pack.TempDir,
+	    VVVV.Dir
+	  );
+  </install>
+</vpack>
