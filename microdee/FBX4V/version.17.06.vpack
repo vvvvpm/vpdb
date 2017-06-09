@@ -17,28 +17,39 @@
         Console.WriteLine("");
         if(VVVV.Architecture == "x64")
         {
-            if(Pack.InstallDataFromJS.Contains("debug"))
-            {
-                Download(
-                    "https://f001.backblazeb2.com/file/uberact/FBX4V/FBX4V-17.06-Debug.zip",
-                    VPM.TempDir + "\\fbx-payload.zip"
-                );
-            }
-            else
+            if(string.IsNullOrEmpty(Pack.InstallDataFromJS))
             {
                 Download(
                     "https://f001.backblazeb2.com/file/uberact/FBX4V/FBX4V-17.06.zip",
                     VPM.TempDir + "\\fbx-payload.zip"
                 );
+                Extract(VPM.TempDir + "\\fbx-payload.zip", Pack.TempDir);
             }
-            Extract(VPM.TempDir + "\\fbx-payload.zip", Pack.TempDir);
-            if(Pack.InstallDataFromJS.Contains("assets"))
+            else
             {
-                Download(
-                    "https://f001.backblazeb2.com/file/uberact/FBX4V/FBX4V-assets.zip",
-                    VPM.TempDir + "\\fbx-assets.zip"
-                );
-                Extract(VPM.TempDir + "\\fbx-assets.zip", Pack.TempDir);
+                if(Pack.InstallDataFromJS.Contains("debug"))
+                {
+                    Download(
+                        "https://f001.backblazeb2.com/file/uberact/FBX4V/FBX4V-17.06-Debug.zip",
+                        VPM.TempDir + "\\fbx-payload.zip"
+                    );
+                }
+                else
+                {
+                    Download(
+                        "https://f001.backblazeb2.com/file/uberact/FBX4V/FBX4V-17.06.zip",
+                        VPM.TempDir + "\\fbx-payload.zip"
+                    );
+                }
+                Extract(VPM.TempDir + "\\fbx-payload.zip", Pack.TempDir);
+                if(Pack.InstallDataFromJS.Contains("assets"))
+                {
+                    Download(
+                        "https://f001.backblazeb2.com/file/uberact/FBX4V/FBX4V-assets.zip",
+                        VPM.TempDir + "\\fbx-assets.zip"
+                    );
+                    Extract(VPM.TempDir + "\\fbx-assets.zip", Pack.TempDir);
+                }
             }
             CopyDir(
                 Pack.TempDir,
