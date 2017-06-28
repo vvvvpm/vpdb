@@ -1,0 +1,21 @@
+<vpack>
+	<meta>
+		<name>ForwardPlus</name>
+		<source>https://github.com/kopffarben/ForwardPlus.git</source>
+        <license>https://github.com/kopffarben/ForwardPlus/blob/master/LICENSE.md</license>
+		<author>Kopffarben</author>
+		<dependencies>
+			<dependency>
+				<name>mp.dx</name>
+				<source>https://github.com/microdee/mp.dx.git</source>
+			</dependency>
+		</dependencies>
+	</meta>
+	<install>
+		CopyDir(
+			Pack.TempDir,
+			VVVV.Dir + "\\packs\\" + Pack.Name,
+			ignore: new string[] {"src", ".git*"}
+		);
+	</install>
+</vpack>
