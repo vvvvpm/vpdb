@@ -1,0 +1,25 @@
+<vpack>
+	<meta>
+		<name>ForwardPlus</name>
+		<source>https://github.com/kopffarben/ForwardPlus</source>
+        <license>https://github.com/kopffarben/ForwardPlus/blob/master/LICENSE</license>
+		<author>Kopffarben</author>
+		<dependencies>
+			<dependency>
+				<name>mp.dx</name>
+				<source>https://github.com/microdee/mp.dx.git</source>
+			</dependency>
+			<dependency>
+				<name>dx11-vvvv</name>
+				<source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/vux/dx11-vvvv/dx11-vvvv.latest.vpack</source>
+			</dependency>
+		</dependencies>
+	</meta>
+	<install>
+		CopyDir(
+			Pack.TempDir,
+			VVVV.Dir + "\\packs\\" + Pack.Name,
+			ignore: new string[] {"src", ".git*"}
+		);
+	</install>
+</vpack>
