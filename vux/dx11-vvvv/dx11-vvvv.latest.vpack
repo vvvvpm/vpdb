@@ -11,11 +11,17 @@
     using System.Linq;
     using System.Net;
     using Newtonsoft.Json.Linq;
-    
+
     try
     {
         var baseurl = "https://api.github.com";
-        var initreguest = string.Format("/repos/{0}/{1}/releases", "mrvux", "dx11-vvvv");
+        var initreguest = string.Format(
+			"/repos/{0}/{1}/releases?client_id={2}&client_secret={3}",
+			"mrvux",
+			"dx11-vvvv",
+			BitConverter.ToString(Convert.FromBase64String("ZDM4YjY2ZDc3ZGQ4MGVlZDEyNjg=")),
+			BitConverter.ToString(Convert.FromBase64String("MWFjM2JjYTRmNTY4ZmQ1MmI5MmUyNTAyOWQxZGI5MDRlZDZiMDdkYw=="))
+		);
         Console.WriteLine(baseurl + initreguest);
         var filename = string.Format("vvvv-packs-dx11-{0}.zip", VVVV.Architecture);
 
