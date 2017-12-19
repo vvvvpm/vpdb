@@ -1,0 +1,26 @@
+<vpack>
+	<meta>
+		<name>InstanceNoodles</name>
+        <license>https://github.com/everyoneishappy/InstanceNoodles/blob/master/LICENSE.md</license>
+		<author>everyoneishappy</author>
+		<dependencies>
+			<dependency>
+				<name>happy.fxh</name>
+				<source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/everyoneishappy/happy.fxh/github.master.vpack</source>
+			</dependency>
+			<dependency>
+				<name>dx11-vvvv</name>
+				<source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/vux/dx11-vvvv/dx11-vvvv.latest.vpack</source>
+                <aliases>dx11, vvvv-dx11</aliases>
+			</dependency>
+		</dependencies>
+	</meta>
+	<install>
+        GitClone("https://github.com/everyoneishappy/InstanceNoodles.git", Pack.TempDir);
+		CopyDir(
+			Pack.TempDir,
+			VVVV.Dir + "\\packs\\" + Pack.Name,
+			ignore: new string[] {"src", ".git*"}
+		);
+	</install>
+</vpack>

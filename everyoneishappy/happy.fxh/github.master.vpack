@@ -1,0 +1,14 @@
+<vpack>
+	<meta>
+		<name>happy.fxh</name>
+        <license>https://github.com/everyoneishappy/happy.fxh/blob/master/LICENSE.md</license>
+		<author>everyoneishappy</author>
+	</meta>
+	<install>
+        GitClone("https://github.com/everyoneishappy/happy.fxh.git", Pack.TempDir);
+		CopyDir(
+			Pack.TempDir,
+			VVVV.Dir + "\\packs\\" + Pack.Name
+		);
+	</install>
+</vpack>

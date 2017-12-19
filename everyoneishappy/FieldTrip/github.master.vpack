@@ -1,0 +1,21 @@
+<vpack>
+	<meta>
+		<name>FieldTrip</name>
+        <license>https://github.com/everyoneishappy/FieldTrip/blob/master/LICENSE.md</license>
+		<author>everyoneishappy</author>
+		<dependencies>
+			<dependency>
+				<name>InstanceNoodles</name>
+				<source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/everyoneishappy/InstanceNoodles/github.master.vpack</source>
+			</dependency>
+		</dependencies>
+	</meta>
+	<install>
+        GitClone("https://github.com/everyoneishappy/FieldTrip.git", Pack.TempDir);
+		CopyDir(
+			Pack.TempDir,
+			VVVV.Dir + "\\packs\\" + Pack.Name,
+			ignore: new string[] {"src", ".git*"}
+		);
+	</install>
+</vpack>
