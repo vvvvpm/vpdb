@@ -1,0 +1,14 @@
+<vpack>
+	<meta>
+		<name>CSVvvv</name>
+		<author>Ro.</author>
+        <license>https://raw.githubusercontent.com/MrRoundRobin/CSVvvv/master/LICENSE</license>
+	</meta>
+	<install>
+        Download("https://github.com/MrRoundRobin/CSVvvv/releases/download/v1.0.1/CSVvvv_1.0.1.zip",
+            VPM.TempDir + "\\CSVvvv.zip"
+        );
+        Extract(VPM.TempDir + "\\CSVvvv.zip", Pack.TempDir);
+        CopyDir(Pack.TempDir, VVVV.Dir);
+	</install>
+</vpack>
