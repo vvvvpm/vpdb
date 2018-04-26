@@ -7,7 +7,7 @@
 		<dependencies>
 			<dependency>
 				<name>mp.dx</name>
-				<source>https://github.com/microdee/mp.dx.git</source>
+				<source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/microdee/mp.dx/github.latest.vpack</source>
 			</dependency>
 		</dependencies>
 	</meta>

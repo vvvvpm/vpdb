@@ -7,7 +7,7 @@
 		<dependencies>
 			<dependency>
 				<name>mp.essentials</name>
-				<source>https://github.com/microdee/mp.essentials.git</source>
+				<source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/microdee/mp.essentials/github.latest.vpack</source>
 			</dependency>
 			<dependency>
 				<name>VVVV.Audio</name>
