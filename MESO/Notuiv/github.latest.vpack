@@ -3,6 +3,13 @@
 		<name>Notuiv</name>
         <license>https://github.com/meso-unimpressed/Notuiv/blob/master/LICENSE.md</license>
 		<author>MESO</author>
+		<dependencies>
+			<dependency>
+				<name>dx11-vvvv</name>
+				<source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/vux/dx11-vvvv/dx11-vvvv.latest.vpack</source>
+				<aliases>dx11, vvvv-dx11</aliases>
+			</dependency>
+		</dependencies>
 	</meta>
 	<install>
 		using System;
