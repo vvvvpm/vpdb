@@ -27,7 +27,7 @@
 			var baseurl = "https://api.github.com";
 			var filename = "Notuiv.zip";
 			var vermajor = 0;
-			var verminor = 1;
+			var verminor = 2;
 
 
 			var initreguest = string.Format(
