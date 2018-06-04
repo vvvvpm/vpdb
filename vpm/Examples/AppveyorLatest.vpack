@@ -1,0 +1,72 @@
+<vpack>
+	<meta>
+        <name>MY_PACK_NAME</name>
+        <license>http://www.MY-LICENSE.com</license>
+		<author>MY_NAME</author>
+	</meta>
+	<install>
+		using System;
+		using System.Text;
+		using System.IO;
+		using System.Linq;
+		using System.Net;
+        using Newtonsoft.Json.Linq;
+
+		try
+		{
+			// params:
+
+			var avuser = "MY_APPVEYOR_ACCOUNT";
+			var avproject = "MY_PROJECT_NAME";
+			var baseurl = "https://ci.appveyor.com";
+            var filename = string.Format("MY_PACK-{0}.zip", VVVV.Architecture);
+			var auxartpath = WebUtility.UrlEncode("my/artifacts/path");
+			
+			// end params;
+
+			var initreguest = string.Format(
+				"/api/projects/{0}/{1}",
+				avuser,
+				avproject
+			);
+
+			var client = new WebClient();
+
+			// optionally you can add your appveyor api token for way faster download but you should understand huge security risks with it
+			// client.Headers.Add("Authorization", Convert.FromBase64String("Bearer MY_TOKEN"));
+
+			client.Headers.Add("content-type", "application/json");
+			Console.WriteLine("Fetching project data from appveyor");
+
+			var stream = client.OpenRead(baseurl + initreguest);
+			var reader = new StreamReader(stream).ReadToEnd();
+            
+            var jsondata = JObject.Parse(reader);
+            var jobid = jsondata.SelectToken("$.build.jobs").ToArray()[0]["jobId"].ToString();
+
+			Console.WriteLine("Downloading {0} from job ID {1}", filename, jobid);
+
+            var durl = string.Format(
+                "{0}/api/buildjobs/{1}/artifacts/{2}%2F{3}",
+                baseurl,
+                jobid,
+                auxartpath,
+                filename
+            );
+
+			Download(
+				durl,
+				Path.Combine(VPM.TempDir, filename)
+			);
+			Extract(Path.Combine(VPM.TempDir, filename), Pack.TempDir);
+			CopyDir(
+				Pack.TempDir,
+				VVVV.Dir
+			);
+		}
+		catch (Exception e)
+		{
+			ThrowException(e);
+		}
+	</install>
+</vpack>
