@@ -33,7 +33,7 @@
 			var client = new WebClient();
 
 			// optionally you can add your appveyor api token for way faster download but you should understand huge security risks with it
-			// client.Headers.Add("Authorization", Convert.FromBase64String("Bearer MY_TOKEN"));
+			// client.Headers.Add("Authorization", Encoding.ASCII.GetString(Convert.FromBase64String("Bearer MY_TOKEN")));
 
 			client.Headers.Add("content-type", "application/json");
 			Console.WriteLine("Fetching project data from appveyor");

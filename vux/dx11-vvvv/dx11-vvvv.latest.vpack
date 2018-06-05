@@ -30,7 +30,7 @@
 
 			var client = new WebClient();
 			//client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
-			client.Headers.Add("Authorization", Convert.FromBase64String("QmVhcmVyIDIydGgya28zdjB1N254bDhveGQw"));
+			client.Headers.Add("Authorization", Encoding.ASCII.GetString(Convert.FromBase64String("QmVhcmVyIDIydGgya28zdjB1N254bDhveGQw")));
 			client.Headers.Add("content-type", "application/json");
 			Console.WriteLine("Fetching project data from appveyor");
 
