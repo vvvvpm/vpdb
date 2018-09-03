@@ -3,6 +3,12 @@
 		<name>Notui</name>
 		<license>https://hackmd.io/s/BkFfnBDP7</license>
 		<author>microdee</author>
+		<dependencies>
+			<dependency>
+				<name>md.stdl</name>
+				<source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/microdee/md.core/md.stdl.vpack</source>
+			</dependency>
+		</dependencies>
 	</meta>
 	<install>
 		using System;
