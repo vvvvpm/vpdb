@@ -34,8 +34,10 @@
 			var ghrepo = "Notuiv";
 			var baseurl = "https://api.github.com";
 			var filename = "Notuiv.zip";
+			var vermajor = 0;
+			var verminor = 3;
 
-			
+
 			var initreguest = string.Format(
 				"/repos/{0}/{1}/releases?client_id={2}&amp;client_secret={3}",
 				ghuser,
@@ -52,10 +54,23 @@
 			var stream = client.OpenRead(baseurl + initreguest);
 			var reader = new StreamReader(stream).ReadToEnd();
 			var jsondata = JArray.Parse(reader);
-			var jsonres = jsondata.Children().ToArray()[0];
-			var asset = jsonres["assets"].Where(a => a["name"].ToString() == filename).ToArray()[0];
+			var jsonres = jsondata.Children().Where(rel =>
+			{
+				return Version.TryParse(rel["tag_name"].ToString(), out var vers) ?
+					vers.Major == vermajor &amp;&amp; vers.Minor == verminor :
+					false;
+			});
+			var release = jsonres.Aggregate(jsonres.First(), (rel, res) =>
+			{
+				var parsesucc = Version.TryParse(rel["tag_name"].ToString(), out var relvers);
+				if(!parsesucc) return res;
+				parsesucc = Version.TryParse(res["tag_name"].ToString(), out var resvers);
+				if(!parsesucc) return res;
+				return relvers.Build > resvers.Build ? rel : res;
+			});
+			var asset = release["assets"].Where(a => a["name"].ToString() == filename).ToArray()[0];
 
-			Console.WriteLine("Downloading {0} from {1}", filename, jsonres["tag_name"]);
+			Console.WriteLine("Downloading {0} from {1}", filename, release["tag_name"]);
 
 			Download(
 				asset["browser_download_url"].ToString(),
