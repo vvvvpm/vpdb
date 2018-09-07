@@ -1,0 +1,28 @@
+<vpack>
+	<meta>
+		<name>VVVV</name>
+        <license>https://vvvv.org/documentation/licensing</license>
+	</meta>
+	<install>
+        using System;
+        using System.Net;
+        using System.IO;
+
+        var version = "50beta37";
+
+        var vvvvurl = $"https://vvvv.org/sites/default/files/vvvv_{version}_{VVVV.Architecture}_0.zip";
+        var addonsurl = $"https://vvvv.org/sites/default/files/addons_{version}_{VVVV.Architecture}.zip";
+
+        Console.WriteLine("Downloading and extracting vvvv");
+
+        var locvvvvzip = Path.Combine(Pack.TempDir, $"vvvv_{version}_{VVVV.Architecture}.zip");
+        Download(vvvvurl, locvvvvzip);
+        Extract(locvvvvzip, Pack.TempDir);
+        CopyDir(Path.Combine(Pack.TempDir, Path.GetFileNameWithoutExtension(locvvvvzip)), VVVV.Dir);
+
+        Console.WriteLine("Downloading and extracting the Addonpack");
+        var locaddonszip = Path.Combine(Pack.TempDir, "addonpack.zip");
+        Download(addonsurl, locaddonszip);
+        Extract(locaddonszip, VVVV.Dir);
+	</install>
+</vpack>
