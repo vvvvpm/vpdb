@@ -33,6 +33,10 @@
 			var confpath = Path.Combine(VVVV.Dir, "vvvv.exe.config");
 			if(!File.Exists(confpath))
 				throw new Exception("vvvv.exe.config does not exists. Please install vvvv first");
+
+			var conffile = new FileInfo(confpath);
+			conffile.Attributes = FileAttributes.Normal;
+			
 			var xmltext = File.ReadAllText(confpath);
 	        var doc = new XmlDocument();
 	        doc.LoadXml(xmltext);
