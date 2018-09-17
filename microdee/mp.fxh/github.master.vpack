@@ -8,7 +8,8 @@
 	<install>
 		CopyDir(
 			Pack.TempDir,
-			VVVV.Dir + "\\packs\\" + Pack.Name
+			VVVV.Dir + "\\packs\\" + Pack.Name,
+			ignore: new [] {"obsolete", "wip"}
 		);
 	</install>
 </vpack>

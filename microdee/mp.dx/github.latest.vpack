@@ -64,7 +64,8 @@
 			Extract(Path.Combine(VPM.TempDir, filename), Pack.TempDir);
 			CopyDir(
 				Pack.TempDir,
-				Path.Combine(VVVV.Dir, "packs")
+				Path.Combine(VVVV.Dir, "packs"),
+				ignore: new [] {"obsolete", "wip"}
 			);
 		}
 		catch (Exception e)
