@@ -1,0 +1,22 @@
+<vpack>
+	<meta>
+		<name>dx11-vvvv</name>
+		<author>vux</author>
+        <license>https://github.com/mrvux/dx11-vvvv/blob/master/License.md</license>
+        <aliases>dx11, vvvv-dx11</aliases>
+    </meta>
+    <install>
+      var srcurl = VVVV.Architecture == "x64" ?
+        "https://vvvv.org/sites/default/files/uploads/vvvv-packs-dx11-1.3.1.x64.zip" :
+        "https://vvvv.org/sites/default/files/vvvv-packs-dx11-x86-1.3.1.zip";
+      Download(
+        srcurl,
+        VPM.TempDir + "\\dx11-vvvv.zip"
+      );
+      Extract(VPM.TempDir + "\\dx11-vvvv.zip", Pack.TempDir);
+      CopyDir(
+        Pack.TempDir,
+        VVVV.Dir
+      );
+    </install>
+</vpack>
