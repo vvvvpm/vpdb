@@ -6,7 +6,7 @@
 		<dependencies>
 			<dependency>
 				<name>happy.fxh</name>
-				<source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/everyoneishappy/happy.fxh/github.master.vpack</source>
+				<source>vpms://raw.githubusercontent.com/vvvvpm/vpdb/master/vux/dx11-vvvv/vvvv.contrib.1.3.1.vpack</source>
 			</dependency>
 			<dependency>
 				<name>dx11-vvvv</name>
