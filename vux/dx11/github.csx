@@ -1,0 +1,59 @@
+/* mppm 2.0 {
+    name: dx11
+    version: github
+    author: vux
+    aliases: dx11-vvvv, vvvv-dx11
+    license:
+        '''
+        BSD 3-Clause License
+        Copyright (c) 2016, Julien Vulliet (mrvux) All rights reserved.
+        See more info at https://github.com/mrvux/dx11-vvvv/blob/master/License.md
+        '''
+} */
+
+using System;
+using System.Text;
+using System.IO;
+using System.Linq;
+using System.Net;
+using Newtonsoft.Json.Linq;
+
+try
+{
+    var baseurl = "https://api.github.com";
+    var initreguest = string.Format(
+        "/repos/{0}/{1}/releases?client_id={2}&amp;client_secret={3}",
+        "mrvux",
+        "dx11-vvvv",
+        Encoding.ASCII.GetString(Convert.FromBase64String("ZDM4YjY2ZDc3ZGQ4MGVlZDEyNjg=")),
+        Encoding.ASCII.GetString(Convert.FromBase64String("MWFjM2JjYTRmNTY4ZmQ1MmI5MmUyNTAyOWQxZGI5MDRlZDZiMDdkYw=="))
+    );
+    // Console.WriteLine(baseurl + initreguest);
+    var filename = string.Format("vvvv-packs-dx11-{0}.zip", VVVV.Architecture);
+
+    var client = new WebClient();
+    client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+    Console.WriteLine("Fetching releases from github");
+
+    var stream = client.OpenRead(baseurl + initreguest);
+    var reader = new StreamReader(stream).ReadToEnd();
+    var jsondata = JArray.Parse(reader);
+    var jsonres = jsondata.Children().ToArray()[0];
+    var asset = jsonres["assets"].Where(a => a["name"].ToString() == filename).ToArray()[0];
+
+    Console.WriteLine("Downloading {0} from {1}", filename, jsonres["tag_name"]);
+
+    Download(
+        asset["browser_download_url"].ToString(),
+        Path.Combine(VPM.TempDir, filename)
+    );
+    Extract(Path.Combine(VPM.TempDir, filename), Pack.TempDir);
+    CopyDir(
+        Pack.TempDir,
+        VVVV.Dir
+    );
+}
+catch (Exception e)
+{
+    ThrowException(e);
+}
