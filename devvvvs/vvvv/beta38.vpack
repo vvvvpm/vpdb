@@ -9,9 +9,9 @@
         using System.IO;
         using System.Diagnostics;
 
-        var version = "50beta38";
+        var version = "50beta38.1";
 
-        var vvvvurl = $"https://vvvv.org/sites/default/files/vvvv_{version}_{VVVV.Architecture}.zip";
+        var vvvvurl = $"https://vvvv.org/sites/default/files/vvvv_{version}_{VVVV.Architecture}_1.zip";
         var addonsurl = $"https://vvvv.org/sites/default/files/addons_{version}_{VVVV.Architecture}.zip";
 
         Console.WriteLine("Downloading and extracting vvvv");
