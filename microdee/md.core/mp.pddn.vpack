@@ -28,39 +28,6 @@
 			var filename = "mp.pddn.zip";
 
 
-			Console.WriteLine("Patching vvvv.exe.config");
-
-			var confpath = Path.Combine(VVVV.Dir, "vvvv.exe.config");
-			if(!File.Exists(confpath))
-				throw new Exception("vvvv.exe.config does not exists. Please install vvvv first");
-
-			var conffile = new FileInfo(confpath);
-			conffile.Attributes = FileAttributes.Normal;
-			
-			var xmltext = File.ReadAllText(confpath);
-	        var doc = new XmlDocument();
-	        doc.LoadXml(xmltext);
-	        var probing = doc["configuration"]?["runtime"]?["assemblyBinding"]?["probing"];
-	        if(probing == null)
-	        {
-	        	var asmbinding = doc["configuration"]?["runtime"]?["assemblyBinding"];
-	        	var probeel = doc.CreateElement("probing");
-	        	var privpathsattr = doc.CreateAttribute("privatePath");
-	        	privpathsattr.Value = @"lib\core;packs\md.core";
-	        	probeel.Attributes.Append(privpathsattr);
-	        	asmbinding.AppendChild(probeel);
-	        }
-	        else
-	        {
-	        	var privpaths = probing.Attributes["privatePath"];
-	        	if(!privpaths.Value.Contains(@"packs\md.core"))
-	        	{
-	        		privpaths.Value = privpaths.Value + @";packs\md.core";
-	        	}
-	        }
-	        doc.Save(confpath);
-
-
 			Console.WriteLine("Fetching releases from github");
 			
 			var initreguest = string.Format(
@@ -99,11 +66,13 @@
 				if(fname.Contains("SharpDX")) File.Delete(file);
 				if(fname.Contains("SlimDX")) File.Delete(file);
 				if(fname.Contains("VVVV.Utils")) File.Delete(file);
+				if(fname.Contains("System.Reactive")) File.Delete(file);
+				if(fname.Contains("Newtonsoft.Json")) File.Delete(file);
 			}
 
 			CopyDir(
 				Pack.TempDir,
-				Path.Combine(VVVV.Dir, "packs", "md.core")
+				Path.Combine(VVVV.Dir, "packs", "md.core", "core")
 			);
 		}
 		catch (Exception e)
