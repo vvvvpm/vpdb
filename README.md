@@ -1,7 +1,8 @@
 # VVVV Pack Database for vpm
 This is a pack repository for vpm containing .vpack files and .csx scripts. You can add your own at https://vvvvpm.github.io . If you'd like to bulk add or bulk update .vpack files write me an email at m@mcro.de and I'll grant you direct push access.
 
-To browse packs and install them from the browser go to https://vvvvpm.github.io.
+~~To browse packs and install them from the browser go to https://vvvvpm.github.io.~~  
+Github deprecated the authentication method that site was using, so that might no longer work.
 
 ## Folder structure and naming convention
 ```
